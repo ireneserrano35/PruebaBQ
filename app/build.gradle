@@ -25,5 +25,11 @@ dependencies {
     compile 'com.google.android.gms:play-services:7.5.0'
 }
 dependencies {
+    compile 'com.android.support:support-v4:22.+'
+}
+dependencies {
+    compile 'com.android.support:support-v4:22.+'
+}
+dependencies {
     compile 'com.evernote:android-sdk:2.0.0-RC2'
 }
