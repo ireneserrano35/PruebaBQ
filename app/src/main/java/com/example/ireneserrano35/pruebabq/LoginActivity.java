@@ -45,8 +45,8 @@ public class LoginActivity extends Activity{
         mButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                EvernoteSession.getInstance().authenticate(LoginActivity.this);
-                mButton.setEnabled(false);
+                    EvernoteSession.getInstance().authenticate(LoginActivity.this);
+                    mButton.setEnabled(false);
             }
         });
     }
