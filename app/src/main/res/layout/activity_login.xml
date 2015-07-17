@@ -10,6 +10,12 @@
     <ProgressBar android:id="@+id/login_progress" style="?android:attr/progressBarStyleLarge"
         android:layout_width="wrap_content" android:layout_height="wrap_content"
         android:layout_marginBottom="8dp" android:visibility="gone" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="37dp"
+        android:text="Salir"
+        android:id="@+id/btnSalir"
+        android:layout_gravity="right" />
 
     <Button android:id="@+id/login_button" style="?android:textAppearanceSmall"
         android:layout_width="wrap_content" android:layout_height="wrap_content"
