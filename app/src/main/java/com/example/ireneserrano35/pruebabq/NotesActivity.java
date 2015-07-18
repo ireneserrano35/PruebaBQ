@@ -42,6 +42,7 @@
         List<String> namesList = new ArrayList<String>();
         List<Notebook> notebookList = new ArrayList<Notebook>();
         private Button btnNew;
+        private Button btnNewNb;
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
@@ -89,9 +90,19 @@
             btnNew = (Button) findViewById(R.id.btn_new_note);
             btnNew.setOnClickListener(new View.OnClickListener() {
                 @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(NotesActivity.this, CreateNote.class);
+                    startActivity(intent);
+
+                }
+            });
+
+            btnNewNb = (Button) findViewById(R.id.btn_new_notebook);
+            btnNewNb.setOnClickListener(new View.OnClickListener() {
+                @Override
                 public void onClick(View v){
-                        Intent intent = new Intent(NotesActivity.this, CreateNote.class);
-                        startActivity(intent);
+                    Intent intent = new Intent(NotesActivity.this, CreateNotebook.class);
+                    startActivity(intent);
 
                 }
             });
