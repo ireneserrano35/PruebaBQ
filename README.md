@@ -28,3 +28,5 @@ Al acceder con los credenciales de Github aparece una lista con las libretas del
 Pinchando el menu superior, se puede seleccionar "ordenar por nombre" para ordenar alfabéticamente las libretas o "ordenar por fecha" para que aparezcan en la parte superior las libretas que se han actualizado recientemente.
 
 Al presionar sobre el botón "Nueva nota" aparece una nueva ventana en la que se puede insertar el título de la nueva nota y el cuerpo. Posteriormente, mediante el botón "Crear nota" se guardará la nota y se volverá a la ventana anterior. No es posible visualizar la nueva nota creada ya que, como he comentado, Github no permite visualizar las notas del usuario, por lo que para consultar si la nueva se ha creado hay que acceder a https://sandbox.evernote.com/
+
+Ya que el servicio no permite visualizar las nuevas notas creadas, se ha creado un nuevo botón para poder crear nuevas libretas. Una vez creada una nueva libreta aparecerá en la lista de libretas. 
