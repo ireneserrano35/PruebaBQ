@@ -7,7 +7,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.example.ireneserrano35.pruebabq.R;
 import com.evernote.client.android.EvernoteSession;
 import com.evernote.client.android.login.EvernoteLoginFragment;
 
@@ -47,6 +46,16 @@ public class LoginActivity extends Activity{
             public void onClick(View v) {
                     EvernoteSession.getInstance().authenticate(LoginActivity.this);
                     mButton.setEnabled(false);
+            }
+        });
+
+        Button btnSalir = (Button) findViewById(R.id.btnSalir);
+        btnSalir.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                finish();
+
             }
         });
     }
