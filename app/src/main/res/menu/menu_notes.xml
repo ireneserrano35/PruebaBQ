@@ -2,6 +2,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.ireneserrano35.pruebabq.NotesActivity">
+
     <item android:id="@+id/action_settings" android:title="@string/action_settings"
+        android:orderInCategory="100" app:showAsAction="never" />
+    <item android:id="@+id/action_order_by_name" android:title="@string/action_order_by_name"
+        android:orderInCategory="100" app:showAsAction="never" />
+    <item android:id="@+id/action_order_by_date" android:title="@string/action_order_by_date"
         android:orderInCategory="100" app:showAsAction="never" />
 </menu>

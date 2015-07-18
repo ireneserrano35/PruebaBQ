@@ -10,8 +10,14 @@
     <ListView
         android:id="@+id/ListaNotas"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="434dp" >
     </ListView>
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Nueva Nota"
+        android:id="@+id/btn_new_note" />
 
     <!--fragment class="com.example.ireneserrano35.pruebabq.NoteListFragment"
         android:id="@+id/ListFragment"
