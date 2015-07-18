@@ -1,5 +1,9 @@
     package com.example.ireneserrano35.pruebabq;
 
+    import android.app.FragmentManager;
+    import android.app.FragmentTransaction;
+    import android.content.Intent;
+    import android.app.Fragment;
     import android.support.v7.app.ActionBarActivity;
     import android.os.Bundle;
     import android.text.TextUtils;
@@ -75,24 +79,22 @@
 
                 @Override
                 public void onException(Exception exception) {
-                    //Log.e(LOGTAG, "Error retrieving notebooks", exception);
-                    int a =0;
+                    Toast.makeText(getApplicationContext(), "Error retrieving notebooks.", Toast.LENGTH_LONG).show();
                 }
             });
 
-            adaptador = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1, namesList);
+            adaptador = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, namesList);
             notebooksListView.setAdapter(adaptador);
 
             btnNew = (Button) findViewById(R.id.btn_new_note);
             btnNew.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View v) {
-                    //crear nueva nota
-                    btnNew.setEnabled(false);
+                public void onClick(View v){
+                        Intent intent = new Intent(NotesActivity.this, CreateNote.class);
+                        startActivity(intent);
+
                 }
             });
-
-
         }
 
         @Override
@@ -110,10 +112,7 @@
             int id = item.getItemId();
 
             //noinspection SimplifiableIfStatement
-            if (id == R.id.action_settings) {
-                return true;
-            }
-            else if (id == R.id.action_order_by_name) {
+            if (id == R.id.action_order_by_name) {
 
                 Collections.sort(namesList, String.CASE_INSENSITIVE_ORDER);
                 notebooksListView.setAdapter(adaptador);
@@ -125,7 +124,7 @@
                 Collections.sort(notebookList, new Comparator<Notebook>() {
                     @Override
                     public int compare(Notebook nt1, Notebook nt2) {
-                        return Long.compare(nt1.getServiceUpdated(), nt2.getServiceUpdated());
+                        return Long.compare(nt2.getServiceUpdated(), nt1.getServiceUpdated());
                     }
                 });
                 namesList.clear();
@@ -137,4 +136,5 @@
             }
             return super.onOptionsItemSelected(item);
         }
+
     }
