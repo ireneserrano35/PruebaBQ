@@ -3,7 +3,6 @@ package com.example.ireneserrano35.pruebabq;
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -12,27 +11,26 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.evernote.client.android.EvernoteSession;
-import com.evernote.client.android.EvernoteUtil;
 import com.evernote.client.android.asyncclient.EvernoteCallback;
 import com.evernote.client.android.asyncclient.EvernoteNoteStoreClient;
-import com.evernote.edam.type.Note;
+import com.evernote.edam.type.Notebook;
 
 
-public class CreateNote extends ActionBarActivity {
+public class CreateNotebook extends ActionBarActivity {
 
     private Button btnCreate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_create_note);
+        setContentView(R.layout.activity_create_notebook);
 
-        btnCreate = (Button) findViewById(R.id.btn_create_note);
+        btnCreate = (Button) findViewById(R.id.btn_create_notebook);
         btnCreate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                guardarNota();
-                Intent intent = new Intent(CreateNote.this, NotesActivity.class);
+                guardarLibreta();
+                Intent intent = new Intent(CreateNotebook.this, NotesActivity.class);
                 startActivity(intent);
 
             }
@@ -42,7 +40,7 @@ public class CreateNote extends ActionBarActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_create_note, menu);
+        getMenuInflater().inflate(R.menu.menu_create_notebook, menu);
         return true;
     }
 
@@ -60,30 +58,28 @@ public class CreateNote extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
-    public void guardarNota(){
+
+    public void guardarLibreta(){
         if (!EvernoteSession.getInstance().isLoggedIn()) {
             return;
         }
 
         EvernoteNoteStoreClient noteStoreClient = EvernoteSession.getInstance().getEvernoteClientFactory().getNoteStoreClient();
 
-        Note note = new Note();
-        EditText mTitle   = (EditText)findViewById(R.id.tituloNota);
-        EditText mContent   = (EditText)findViewById(R.id.cuerpoNota);
-        String content = mContent.getText().toString();
+        Notebook notebook = new Notebook();
+        EditText mTitle  = (EditText)findViewById(R.id.tituloLibreta);
 
-        note.setTitle(mTitle.getText().toString());
-        note.setContent(EvernoteUtil.NOTE_PREFIX + content + EvernoteUtil.NOTE_SUFFIX);
+        notebook.setName(mTitle.getText().toString());
 
-        noteStoreClient.createNoteAsync(note, new EvernoteCallback<Note>() {
+        noteStoreClient.createNotebookAsync(notebook, new EvernoteCallback<Notebook>() {
             @Override
-            public void onSuccess(Note result) {
-                Toast.makeText(getApplicationContext(), result.getTitle() + " has been created", Toast.LENGTH_LONG).show();
+            public void onSuccess(Notebook result) {
+                Toast.makeText(getApplicationContext(), result.getName() + " has been created", Toast.LENGTH_LONG).show();
             }
 
             @Override
             public void onException(Exception exception) {
-                Toast.makeText(getApplicationContext(), "Error creating note.", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Error creating notebook.", Toast.LENGTH_LONG).show();
             }
         });
     }
