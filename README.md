@@ -12,13 +12,14 @@ Desarrollar una aplicación Android que sea cliente de Evernote cumpliendo los s
 
 1. Exista una pantalla inicial de login, donde el usuario pueda introducir sus credenciales para tener acceso a su cuenta Evernote. (https://evernote.com/)
 
-2. Una vez introducidos los credenciales, se mostrarán en pantalla todas las notas creadas por el usuario.
+2. Una vez introducidos los credenciales, se mostrarán en pantalla todas las notas creadas por el usuario. (Modificado: Se muestran libretas, ya que Evenote no da permisos para consultar notas)
 
-3. Dicha pantalla tendrá un menú desplegable con dos opciones, una de ellas ordenará la lista por el título de la nota y la otra por fecha de creación o modificación.
+3. Dicha pantalla tendrá un menú desplegable con dos opciones, una de ellas ordenará la lista por el título de la libreta y la otra por fecha de creación o modificación.
 
-4. Al hacer tap sobre una nota, se accederá al contenido de la misma. (No es necesario que las notas sean editables)
+4. Al hacer tap sobre una nota, se accederá al contenido de la misma. (No es necesario que las notas sean editables) (No es posible. Tampoco hay permisos para acceder a las notas dentro de una libreta)
 
-5. Existirá un botón para “añadir nota” que permitirá crear una nota (con título y cuerpo) y posteriormente guardarla.
+5. Existirá un botón para “nueva nota” que permitirá crear una nota (con título y cuerpo) y posteriormente guardarla.
+   Se ha añadido un botón "nueva libreta" que permitirá crear una libreta y posteriormente guardarla.
 
 
 COMENTARIOS:
